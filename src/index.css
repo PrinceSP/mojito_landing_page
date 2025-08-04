@@ -9,7 +9,7 @@
 
 @theme {
   --color-yellow: #e7d393;
-  --color-white: #efefef;
+  --color-white-100: #efefef;
   --font-sans: "Mona Sans", sans-serif;
   --font-modern-segra: "Modern Segra", sans-serif;
   --font-serif: "DM Serif Text", sans-serif;
@@ -70,7 +70,7 @@ body {
     }
 
     p {
-      @apply font-modern-segra text-2xl -mb-2;
+      @apply font-modern-segra text-3xl -mb-2;
     }
 
     a {
