@@ -1,6 +1,7 @@
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { cocktailLists, mockTailLists } from '../constants'
+import DrinkList from './drinkList'
 
 const Cocktails = () => {
   useGSAP(()=>{
@@ -9,7 +10,8 @@ const Cocktails = () => {
         trigger:"#cocktails",
         start:"top 30%",
         end:"bottom 80%",
-        scrub:true
+        scrub:true,
+        markers:true
       }
     })
 
@@ -24,35 +26,8 @@ const Cocktails = () => {
       <img src="/images/cocktail-right-leaf.png" alt="cocktail right leaf" id="c-right-leaf" />
 
       <div className='list'>
-        <div className='popular'>
-          <h2>Most popular cocktails:</h2>
-          <ul>
-            {cocktailLists.map(({ country, name, detail, price }) =>
-              <li key={country}>
-                <div className='md:me-28'>
-                  <h3>{name}</h3>
-                  <p>{country} | {detail}</p>
-                </div>
-                <span>- {price}</span>
-              </li>
-            )}
-          </ul>
-        </div>
-        
-        <div className='loved'>
-          <h2>Most loved mocktails:</h2>
-          <ul>
-            {mockTailLists.map(({ country, name, detail, price }) =>
-              <li key={country}>
-                <div className='me-28'>
-                  <h3>{name}</h3>
-                  <p>{country} | {detail}</p>
-                </div>
-                <span>- {price}</span>
-              </li>
-            )}
-          </ul>
-        </div>
+        <DrinkList data={cocktailLists} title="Most popular cocktails:" className='md:me-28' container="popular"/>
+        <DrinkList data={mockTailLists} title="Most loved mocktails:" className='me-28' container='loved'/>
       </div>
     </section>
   )
