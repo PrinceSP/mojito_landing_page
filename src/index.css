@@ -3,15 +3,15 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Modern Segra";
-  src: url("/fonts/Modern Segra Demo.ttf") format("truetype");
+  font-family: "modern-segra";
+  src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
 }
 
 @theme {
   --color-yellow: #e7d393;
   --color-white-100: #efefef;
   --font-sans: "Mona Sans", sans-serif;
-  --font-modern-segra: "Modern Segra", sans-serif;
+  --font-modern-segra: "modern-segra";
   --font-serif: "DM Serif Text", sans-serif;
 }
 
@@ -82,7 +82,7 @@ body {
     }
 
     .noisy {
-      @apply absolute inset-0 size-full bg-[url("images/noise.png")]
+      @apply absolute inset-0 size-full bg-[url("images/noise.png")];
     }
 
     #hero {
