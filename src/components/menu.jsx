@@ -9,10 +9,9 @@ const Menu = () => {
 
   useGSAP(() => {
     gsap.fromTo("#title", { opacity: 0 }, { opacity: 1, duration: 1 })
-
-    gsap.fromTo(".details", { y: 100 }, { y: 0, duration: 0.5, ease: "power1.inOut" })
-
-    gsap.fromTo(".cocktail", { x: -300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power1.inOut" })
+    gsap.fromTo(".details h2", { y: 100 }, { y: 0, duration: 0.5, ease: "power1.out" })
+    gsap.fromTo(".details p", { y: 100 }, { y: 0, duration: 1, ease: "power1.out" })
+    gsap.fromTo(".cocktail img", { xPercent: -100, opacity: 0 }, { xPercent: 0, opacity: 1, duration: 1, ease: "power1.inOut" })
   }, [currentIndex])
 
   const totalCocktails = allCocktails.length
@@ -30,8 +29,6 @@ const Menu = () => {
   const prev = goToCocktail(-1)
   const next = goToCocktail(1)
 
-  console.log(currentCocktail)
-
   return (
     <section id="menu" aria-labelledby="menu-heading">
       <img src="/images/slider-left-leaf.png" alt="left-leaf" id='m-left-leaf' />
@@ -39,7 +36,7 @@ const Menu = () => {
 
       <h2 id="menu-heading" className='sr-only'>Cocktail Menu</h2>
 
-      <nav className="cocktail-tabs" aria-labelledby="Cocktail Navigation">
+      <nav className="cocktail-tabs" aria-label="Cocktail Navigation">
         {
           allCocktails.map(({ id, name }, index) => {
             const isActive = index === currentIndex
