@@ -16,12 +16,12 @@ const Menu = () => {
 
   const totalCocktails = allCocktails.length
 
-  const goToSlide = (index) => {
+  function goToSlide(index) {
     const newIndex = (index + totalCocktails) % totalCocktails
     setCurrentIndex(newIndex)
   }
 
-  const goToCocktail = (index) => {
+  function goToCocktail(index) {
     return allCocktails[(currentIndex + index + totalCocktails) % totalCocktails]
   }
 
